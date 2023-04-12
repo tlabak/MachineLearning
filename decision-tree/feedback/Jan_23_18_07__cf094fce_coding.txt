@@ -1,0 +1,54 @@
+============================= test session starts ==============================
+platform linux -- Python 3.9.16, pytest-7.2.1, pluggy-1.0.0
+rootdir: /workspace
+collected 20 items
+tests/test_a_environment.py .                                            [  5%]
+tests/test_a_setup.py ...                                                [ 20%]
+tests/test_data.py ...                                                   [ 35%]
+tests/test_decision_tree.py FF.F                                         [ 55%]
+tests/test_experiment.py .F                                              [ 65%]
+tests/test_metrics.py .                                                  [ 70%]
+tests/test_numpy.py ......                                               [100%]
+=================================== FAILURES ===================================
+______________________ test_decision_tree_binary_predict _______________________
+>       np.testing.assert_allclose(predictions, ground_truth)
+tests/test_decision_tree.py:44:
+>           return func(*args, **kwds)
+E           AssertionError:
+E           Not equal to tolerance rtol=1e-07, atol=0
+E
+E           (shapes (5,), (5, 1) mismatch)
+E            x: array([1., 0., 1., 1., 0.])
+E            y: array([[1],
+E                  [0],
+E                  [1],...
+/usr/local/lib/python3.9/contextlib.py:79: AssertionError
+____________________ test_decision_tree_continuous_predict _____________________
+>       np.testing.assert_allclose(predictions, ground_truth)
+tests/test_decision_tree.py:79:
+>           return func(*args, **kwds)
+E           AssertionError:
+E           Not equal to tolerance rtol=1e-07, atol=0
+E
+E           (shapes (5,), (5, 1) mismatch)
+E            x: array([1., 0., 0., 0., 1.])
+E            y: array([[1],
+E                  [0],
+E                  [0],...
+/usr/local/lib/python3.9/contextlib.py:79: AssertionError
+____________________________ test_decision_tree_run ____________________________
+>               assert accuracy >= goal, message
+E               AssertionError: On xor-easy.csv dataset with fraction 1.0, expected 1.00 but got 0.500
+E               assert 0.5 >= 1.0
+tests/test_decision_tree.py:123: AssertionError
+_______________________________ test_comparisons _______________________________
+>           assert acc_a > acc_b, message
+E           AssertionError: decision_tree should beat predict_mode in comparion #2 on majority-rule.csv, but 0.549 <= 0.656
+E           assert 0.548828125 > 0.65625
+tests/test_experiment.py:55: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_decision_tree.py::test_decision_tree_binary_predict - Asser...
+FAILED tests/test_decision_tree.py::test_decision_tree_continuous_predict - A...
+FAILED tests/test_decision_tree.py::test_decision_tree_run - AssertionError: ...
+FAILED tests/test_experiment.py::test_comparisons - AssertionError: decision_...
+========================= 4 failed, 16 passed in 2.72s =========================

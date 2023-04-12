@@ -1,0 +1,24 @@
+============================= test session starts ==============================
+platform linux -- Python 3.9.16, pytest-7.2.0, pluggy-1.0.0
+rootdir: /workspace
+collected 20 items / 17 deselected / 3 selected
+tests/test_a_setup.py .F.
+======================
+Output of autograder
+======================
+# of tests:	2/3 tests passed
+Overall score:	0/100
+======================
+FAIL - REQUIRED (automatic zero) test_setup_password
+======================
+=================================== FAILURES ===================================
+_____________________________ test_setup_password ______________________________
+>           assert inf.readline().strip() == secret, msg
+E           AssertionError: See tests/test_a_setup.py for details on this error.
+E           assert 'autograder_p...ord_goes_here' == '23832461'
+E             - 23832461
+E             + autograder_password_goes_here
+tests/test_a_setup.py:117: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_a_setup.py::test_setup_password - AssertionError: See tests...
+================== 1 failed, 2 passed, 17 deselected in 0.44s ==================

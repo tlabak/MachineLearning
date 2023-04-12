@@ -1,0 +1,118 @@
+{
+    "test_setup_netid": {
+        "weight": "required",
+        "depends": []
+    },
+    "test_setup_password": {
+        "weight": "required",
+        "depends": ["test_setup_netid"]
+    },
+    "test_setup_other_pdfs": {
+        "weight": "required",
+        "depends": ["test_setup_netid"]
+    },
+    "test_imports": {
+        "weight": "required",
+        "depends": []
+    },
+
+    "test_hello_world": {
+        "weight": 0.1,
+        "depends": [
+            "test_setup_netid"
+        ]
+    },
+    "test_numpy_replace_nonfinite_in_place": {
+        "weight": 0.4,
+        "depends": [
+            "test_setup_netid"
+        ]
+    },
+    "test_numpy_replace_nans_out_of_place": {
+        "weight": 0.4,
+        "depends": [
+            "test_setup_netid"
+        ]
+    },
+    "test_numpy_find_mode": {
+        "weight": 0.4,
+        "depends": [
+            "test_setup_netid"
+        ]
+    },
+    "test_numpy_flip_and_slice_matrix": {
+        "weight": 0.4,
+        "depends": [
+            "test_setup_netid"
+        ]
+    },
+    "test_numpy_divide_matrix_along_rows": {
+        "weight": 0.4,
+        "depends": [
+            "test_setup_netid"
+        ]
+    },
+
+    "test_train_test_split": {
+        "weight": 1,
+        "depends": [
+            "test_setup_netid"
+        ]
+    },
+    "test_cross_validation": {
+        "weight": 1,
+        "depends": [
+            "test_setup_netid"
+        ]
+    },
+    "test_metrics": {
+        "weight": 2,
+        "depends": [
+            "test_setup_netid"
+        ]
+    },
+
+    "test_information_gain": {
+        "weight": 1,
+        "depends": [
+            "test_setup_netid"
+        ]
+    },
+    "test_predict_mode": {
+        "weight": 1,
+        "depends": [
+            "test_setup_netid",
+            "test_train_test_split"
+        ]
+    },
+
+    "test_decision_tree_binary_predict": {
+        "weight": 1,
+        "depends": [
+            "test_setup_netid"
+        ]
+    },
+    "test_decision_tree_continuous_predict": {
+        "weight": 1,
+        "depends": [
+            "test_setup_netid"
+        ]
+    },
+    "test_decision_tree_run": {
+        "weight": 4,
+        "depends": [
+            "test_setup_netid",
+            "test_train_test_split",
+            "test_information_gain"
+        ]
+    },
+    "test_comparisons": {
+        "weight": 2,
+        "depends": [
+            "test_setup_netid",
+            "test_train_test_split",
+            "test_decision_tree_run",
+            "test_predict_mode"
+        ]
+    }
+}

@@ -1,0 +1,119 @@
+============================= test session starts ==============================
+platform linux -- Python 3.9.16, pytest-7.2.1, pluggy-1.0.0
+rootdir: /workspace
+collected 20 items
+tests/test_a_environment.py .                                            [  5%]
+tests/test_a_setup.py ...                                                [ 20%]
+tests/test_data.py .FF                                                   [ 35%]
+tests/test_decision_tree.py FFFF                                         [ 55%]
+tests/test_experiment.py FF                                              [ 65%]
+tests/test_metrics.py F                                                  [ 70%]
+tests/test_numpy.py FFFFFF                                               [100%]
+=================================== FAILURES ===================================
+____________________________ test_train_test_split _____________________________
+>       output = train_test_split(features, targets, fraction)
+tests/test_data.py:28:
+>           raise NotImplementedError
+E           NotImplementedError
+src/data.py:58: NotImplementedError
+____________________________ test_cross_validation _____________________________
+>           cv = cross_validation(features, targets, folds)
+tests/test_data.py:60:
+>       raise NotImplementedError
+E       NotImplementedError
+src/data.py:92: NotImplementedError
+______________________ test_decision_tree_binary_predict _______________________
+>       predictions = decision_tree.predict(examples)
+tests/test_decision_tree.py:41:
+>       raise NotImplementedError
+E       NotImplementedError
+src/decision_tree.py:175: NotImplementedError
+____________________ test_decision_tree_continuous_predict _____________________
+>       predictions = decision_tree.predict(examples)
+tests/test_decision_tree.py:76:
+>       raise NotImplementedError
+E       NotImplementedError
+src/decision_tree.py:175: NotImplementedError
+____________________________ test_information_gain _____________________________
+>       iGHumidity = information_gain(_features, 2, _targets)
+tests/test_decision_tree.py:87:
+>       raise NotImplementedError
+E       NotImplementedError
+src/decision_tree.py:262: NotImplementedError
+____________________________ test_decision_tree_run ____________________________
+>               accuracy = run(datasets.get(key), learner_type, fraction)
+tests/test_decision_tree.py:120:
+>       raise NotImplementedError
+E       NotImplementedError
+src/decision_tree.py:160: NotImplementedError
+______________________________ test_predict_mode _______________________________
+>               accuracy = run(datasets.get(key), learner_type, fraction)
+tests/test_experiment.py:24:
+>       raise NotImplementedError
+E       NotImplementedError
+src/predict_mode.py:38: NotImplementedError
+_______________________________ test_comparisons _______________________________
+>           acc_a = run(data_path, method_a, fraction, **kwargs_a)
+tests/test_experiment.py:46:
+>           raise NotImplementedError
+E           NotImplementedError
+src/data.py:58: NotImplementedError
+_________________________________ test_metrics _________________________________
+>       _est = compute_accuracy(y_true, y_pred)
+tests/test_metrics.py:16:
+>       raise NotImplementedError
+E       NotImplementedError
+src/metrics.py:53: NotImplementedError
+_______________________________ test_hello_world _______________________________
+>       retval = src.numpy_practice.hello_world()
+tests/test_numpy.py:81:
+>       raise NotImplementedError
+E       NotImplementedError
+src/numpy_practice.py:24: NotImplementedError
+____________________ test_numpy_replace_nonfinite_in_place _____________________
+>           retval = src.numpy_practice.replace_nonfinite_in_place(before)
+tests/test_numpy.py:99:
+>       raise NotImplementedError
+E       NotImplementedError
+src/numpy_practice.py:51: NotImplementedError
+_____________________ test_numpy_replace_nans_out_of_place _____________________
+>           retval = src.numpy_practice.replace_nans_out_of_place(before)
+tests/test_numpy.py:125:
+>       raise NotImplementedError
+E       NotImplementedError
+src/numpy_practice.py:75: NotImplementedError
+_____________________________ test_numpy_find_mode _____________________________
+>           assert src.numpy_practice.find_mode(arr) == target, f"Mode is {target}"
+tests/test_numpy.py:148:
+>       raise NotImplementedError
+E       NotImplementedError
+src/numpy_practice.py:103: NotImplementedError
+_______________________ test_numpy_flip_and_slice_matrix _______________________
+>           assert np.array_equal(src.numpy_practice.flip_and_slice_matrix(before), after), msg
+tests/test_numpy.py:171:
+>       raise NotImplementedError
+E       NotImplementedError
+src/numpy_practice.py:131: NotImplementedError
+_____________________ test_numpy_divide_matrix_along_rows ______________________
+>           assert np.array_equal(src.numpy_practice.divide_matrix_along_rows(x, y), target), msg
+tests/test_numpy.py:193:
+>       raise NotImplementedError
+E       NotImplementedError
+src/numpy_practice.py:165: NotImplementedError
+=========================== short test summary info ============================
+FAILED tests/test_data.py::test_train_test_split - NotImplementedError
+FAILED tests/test_data.py::test_cross_validation - NotImplementedError
+FAILED tests/test_decision_tree.py::test_decision_tree_binary_predict - NotIm...
+FAILED tests/test_decision_tree.py::test_decision_tree_continuous_predict - N...
+FAILED tests/test_decision_tree.py::test_information_gain - NotImplementedError
+FAILED tests/test_decision_tree.py::test_decision_tree_run - NotImplementedError
+FAILED tests/test_experiment.py::test_predict_mode - NotImplementedError
+FAILED tests/test_experiment.py::test_comparisons - NotImplementedError
+FAILED tests/test_metrics.py::test_metrics - NotImplementedError
+FAILED tests/test_numpy.py::test_hello_world - NotImplementedError
+FAILED tests/test_numpy.py::test_numpy_replace_nonfinite_in_place - NotImplem...
+FAILED tests/test_numpy.py::test_numpy_replace_nans_out_of_place - NotImpleme...
+FAILED tests/test_numpy.py::test_numpy_find_mode - NotImplementedError
+FAILED tests/test_numpy.py::test_numpy_flip_and_slice_matrix - NotImplemented...
+FAILED tests/test_numpy.py::test_numpy_divide_matrix_along_rows - NotImplemen...
+========================= 15 failed, 5 passed in 1.48s =========================

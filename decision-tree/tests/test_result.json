@@ -1,0 +1,22 @@
+{
+    "test_imports": true,
+    "test_setup_netid": true,
+    "test_setup_password": true,
+    "test_setup_other_pdfs": true,
+    "test_load_data": true,
+    "test_train_test_split": true,
+    "test_cross_validation": true,
+    "test_decision_tree_binary_predict": true,
+    "test_decision_tree_continuous_predict": true,
+    "test_information_gain": true,
+    "test_decision_tree_run": true,
+    "test_predict_mode": true,
+    "test_comparisons": true,
+    "test_metrics": true,
+    "test_hello_world": true,
+    "test_numpy_replace_nonfinite_in_place": true,
+    "test_numpy_replace_nans_out_of_place": true,
+    "test_numpy_find_mode": true,
+    "test_numpy_flip_and_slice_matrix": true,
+    "test_numpy_divide_matrix_along_rows": true
+}
