@@ -1,0 +1,53 @@
+{
+    "test_imports": {
+        "weight": "required",
+        "depends": []
+    },
+    "test_setup": {
+        "weight": "required",
+        "depends": []
+    },
+    "test_np_suggestions": {
+        "weight": 0.5,
+        "depends": []
+    },
+
+    "test_bandit_slots": {
+        "weight": 2,
+        "depends": []
+    },
+    "test_bandit_random_argmax": {
+        "weight": 0.5,
+        "depends": ["test_bandit_slots"]
+    },
+    "test_bandit_frozen_lake": {
+        "weight": 1,
+        "depends": [
+            "test_bandit_slots",
+            "test_bandit_random_argmax"
+        ]
+    },
+
+    "test_q_learning_slots": {
+        "weight": 2,
+        "depends": []
+    },
+    "test_q_learning_random_argmax": {
+        "weight": 0.5,
+        "depends": ["test_q_learning_slots"]
+    },
+    "test_q_learning_frozen_lake": {
+        "weight": 2,
+        "depends": [
+            "test_q_learning_slots",
+            "test_q_learning_random_argmax"
+        ]
+    },
+    "test_q_learning_deterministic": {
+        "weight": 2,
+        "depends": [
+            "test_q_learning_slots",
+            "test_q_learning_random_argmax"
+        ]
+    }
+}

@@ -1,0 +1,66 @@
+============================= test session starts ==============================
+platform linux -- Python 3.9.16, pytest-7.2.1, pluggy-1.0.0
+rootdir: /workspace
+collected 10 items
+tests/test_a_environment.py F.                                           [ 20%]
+tests/test_a_setup.py .                                                  [ 30%]
+tests/test_bandit.py FFF                                                 [ 60%]
+tests/test_q_learning.py FFFF                                            [100%]
+=================================== FAILURES ===================================
+_____________________________ test_np_suggestions ______________________________
+>                           assert "src.random" in line, src_random_msg
+E                           AssertionError: Please use `src.random` instead of `np.random`.
+E                           assert 'src.random' in '            action = np.random.choice(best_actions)\n'
+tests/test_a_environment.py:23: AssertionError
+______________________________ test_bandit_slots _______________________________
+>       state_action_values, rewards = agent.fit(env, steps=10000, num_bins=100)
+tests/test_bandit.py:22:
+>                   best_actions = np.flatnonzero(self.Q[state] == np.max(self.Q[state]))
+E                   IndexError: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+src/multi_armed_bandit.py:107: IndexError
+__________________________ test_bandit_random_argmax ___________________________
+>           _, a, _ = agent.predict(env, state_action_values)
+tests/test_bandit.py:62:
+>           action_values = state_action_values[obs]
+E           IndexError: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+src/multi_armed_bandit.py:183: IndexError
+___________________________ test_bandit_frozen_lake ____________________________
+>       state_action_values, rewards = agent.fit(env, steps=1000)
+tests/test_bandit.py:83:
+>               alpha[state, action] = 1 / (self.N[state, action] + 1)
+E               IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
+src/multi_armed_bandit.py:114: IndexError
+____________________________ test_q_learning_slots _____________________________
+>       state_action_values, rewards = agent.fit(env, steps=1000)
+tests/test_q_learning.py:22:
+>       raise NotImplementedError
+E       NotImplementedError
+src/q_learning.py:93: NotImplementedError
+_________________________ test_q_learning_frozen_lake __________________________
+>       state_action_values, rewards = agent.fit(env, steps=10000)
+tests/test_q_learning.py:50:
+>       current_state, _ = env.reset()
+E       TypeError: cannot unpack non-iterable int object
+src/q_learning.py:91: TypeError
+________________________ test_q_learning_random_argmax _________________________
+>           _, a, _ = agent.predict(env, state_action_values)
+tests/test_q_learning.py:83:
+>       raise NotImplementedError
+E       NotImplementedError
+src/q_learning.py:147: NotImplementedError
+________________________ test_q_learning_deterministic _________________________
+>       states, actions, rewards = agent.predict(env, state_action_values)
+tests/test_q_learning.py:122:
+>       current_state, _ = env.reset()
+E       TypeError: cannot unpack non-iterable int object
+src/q_learning.py:145: TypeError
+=========================== short test summary info ============================
+FAILED tests/test_a_environment.py::test_np_suggestions - AssertionError: Ple...
+FAILED tests/test_bandit.py::test_bandit_slots - IndexError: only integers, s...
+FAILED tests/test_bandit.py::test_bandit_random_argmax - IndexError: only int...
+FAILED tests/test_bandit.py::test_bandit_frozen_lake - IndexError: too many i...
+FAILED tests/test_q_learning.py::test_q_learning_slots - NotImplementedError
+FAILED tests/test_q_learning.py::test_q_learning_frozen_lake - TypeError: can...
+FAILED tests/test_q_learning.py::test_q_learning_random_argmax - NotImplement...
+FAILED tests/test_q_learning.py::test_q_learning_deterministic - TypeError: c...
+========================= 8 failed, 2 passed in 0.61s ==========================

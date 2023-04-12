@@ -1,0 +1,12 @@
+{
+    "test_np_suggestions": true,
+    "test_bandit_slots": true,
+    "test_q_learning_slots": true,
+    "test_setup": true,
+    "test_imports": true,
+    "test_bandit_random_argmax": true,
+    "test_bandit_frozen_lake": true,
+    "test_q_learning_frozen_lake": true,
+    "test_q_learning_random_argmax": true,
+    "test_q_learning_deterministic": true
+}

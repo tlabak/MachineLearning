@@ -1,0 +1,10 @@
+#for completing assignment
+numpy
+pandas
+matplotlib
+gym==0.26.2
+
+#for test cases and free-response questions
+filetype
+pytest
+scikit-learn
