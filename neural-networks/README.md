@@ -1,56 +1,13 @@
-# CS349 HW 3: Perceptron, Neural Networks, and Regularization
+# Perceptron, Neural Networks, and Regularization
+Perceptron is a single-layer neural network used for binary classification tasks in machine learning. The perceptron algorithm works by taking in inputs, which are multiplied by weights, and then a bias term is added. The resulting output is passed through an activation function, which determines the final output. The perceptron algorithm updates the weights and bias during the training process to minimize the error.
 
-This assignment is due Thursday, February 23 at 11:59pm CST. There are two
-points possible for passing the `test_setup` test case, due *early* on
-Thursday, February 16 at 11:59pm CST.  Late work will not be accepted except in
-extreme circumstances.
+Neural networks are a type of machine learning algorithm used for both regression and classification tasks. They are composed of layers of interconnected nodes called neurons, where each neuron takes inputs, applies a transformation, and then passes the output to the next layer. The output of the final layer corresponds to the predicted output.
 
-## Academic integrity
+Regularization is a technique used in machine learning to prevent overfitting and improve the generalization performance of models. It works by adding a penalty term to the loss function, which encourages the model to use simpler solutions. The two most common types of regularization are L1 and L2 regularization, which add the absolute value and square of the weights, respectively, as the penalty term.
 
-Your work must be your own. You may not work with others. Do not submit other
-people's work as your own, and do not allow others to submit your work as
-theirs. You may *talk* with other students about the concepts covered by the
-homework, but you may not share code or answers with them in any way. If you
-have a question about an error message or about why a numpy function returns
-what it does, post it on Piazza. If you need help debugging your code, make a
-*private* post on Piazza or come to office hours.
+Neural networks and perceptrons can both benefit from regularization to prevent overfitting and improve the generalization performance of the models. Regularization can also be used with other types of machine learning algorithms, such as linear regression and logistic regression, to improve their performance.
 
-We will use a combination of automated and manual methods for comparing your
-code and free-response answers to that of other students. If we find
-sufficiently suspicious similarities between your answers and those of another
-student, you will both be reported for a suspected violation. If you're unsure
-of the academic integrity policies, ask for help; we can help you avoid
-breaking the rules, but we can't un-report a suspected violation.
-
-By pushing your code to GitHub, you agree to these rules, and understand that
-there may be severe consequences for violating them. 
-
-## What's changed since HW2?
-
-- The coding and free-response portions are still worth 10 points.
-  Some FRQs rely on your code working before you can answer them.
-- You can reuse your conda environment from HW1.
-
-## Important instructions
-As before, your work will be graded and aggregated using an autograder that
-will download the code and free response questions from each student's
-repository. If you don't follow the instructions, you run the risk of getting
-*zero points*. The `test_setup` test case gives you extra credit for following
-these instructions and will make it possible to grade your work easily.
-
-Note: *do not* include your name or Net ID inside of your free-response PDFs.
-
-## Environment setup
-
-You should be able to use the same `cs349` environment that you used for the
-past two assignments.  If you deleted that environment, please refer to the HW1
-readme to recreate it.
-
-## What to do for this assignment
-
-The detailed instructions for the work you need to do are in `problems.md`.
-
-For the coding portion of the assignment, you will:
+## Coding
 - Implement the Perceptron classifier
 - Write the `forward`, `backward`, and `fit` functions to enable training
   a MLP written only in `numpy`.
@@ -60,29 +17,3 @@ function](https://en.wikipedia.org/wiki/Rectifier_(neural_networks))
 - Implement regularization for the MLP's weights
 - Create a feature transformation that allows a linear model to classify
   a challenging spiral dataset.
-
-You will also write up answers to the five free response questions.
-
-In every function where you need to write code, there is a `raise
-NotImplementeError` in the code. You will replace that line with code that
-completes what the function docstring asks you to do.  The test cases will
-guide you through the work you need to do and tell you how many points you've
-earned. The test cases can be run from the root directory of this repository
-with:
-
-``python -m pytest -s``
-
-To run a single test, you can specify it with `-k`, e.g., `python -m pytest -s
--k test_setup`.  To run a group of tests, you can use `-k` with a prefix, e.g.,
-`python -m pytest -s -k test_model` will run all tests that begin with
-`test_model`.  The `-s` means that any print statements you include will in
-fact be printed; the default behavior (`python -m pytest`) will suppress
-everything but the pytest output.
-
-We will use these test cases to grade your work! Even if you change the test
-cases such that you pass the tests on your computer, we're still going to use
-the original test cases to grade your assignment.
-
-## Questions? Problems? Issues?
-
-Simply post on Piazza and we'll get back to you.
