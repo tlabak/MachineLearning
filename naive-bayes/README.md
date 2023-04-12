@@ -1,4 +1,4 @@
-# CS349 HW 4: Naive Bayes and the EM Algorithm
+# Naive Bayes and the EM Algorithm
 Naive Bayes is a probabilistic machine learning algorithm used for classification tasks. The algorithm is based on Bayes' theorem, which states that the probability of a hypothesis (in this case, a label or class) is proportional to the product of the prior probability of the hypothesis and the conditional probability of the data given the hypothesis.
 
 Naive Bayes is "naive" in the sense that it makes the assumption that the features are independent of each other given the class, which simplifies the calculations and makes the algorithm computationally efficient. Naive Bayes is widely used in text classification tasks, such as spam filtering and sentiment analysis.
