@@ -8,12 +8,12 @@ Regularization is a technique used in machine learning to prevent overfitting an
 Neural networks and perceptrons can both benefit from regularization to prevent overfitting and improve the generalization performance of the models. Regularization can also be used with other types of machine learning algorithms, such as linear regression and logistic regression, to improve their performance.
 
 ## Coding
-- Implement the Perceptron classifier
-- Write the `forward`, `backward`, and `fit` functions to enable training
+- Implemented the Perceptron classifier
+- Wrote the `forward`, `backward`, and `fit` functions to enable training
   a MLP written only in `numpy`.
-- Implement squared error loss function
-- Implement the [ReLU activation
+- Implemented squared error loss function
+- Implemented the [ReLU activation
 function](https://en.wikipedia.org/wiki/Rectifier_(neural_networks))
-- Implement regularization for the MLP's weights
-- Create a feature transformation that allows a linear model to classify
+- Implemented regularization for the MLP's weights
+- Created a feature transformation that allows a linear model to classify
   a challenging spiral dataset.
