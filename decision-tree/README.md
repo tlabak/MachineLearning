@@ -1,5 +1,11 @@
 # Decision Trees and Foundations
+Decision trees are a type of supervised learning algorithm used in machine learning that can be used for both regression and classification tasks. They are constructed by recursively splitting the data into subsets based on the most significant attributes that contribute to the decision-making process.
 
+The tree structure represents a hierarchy of decisions that lead to the final decision, where each internal node of the tree corresponds to a decision based on a specific feature, and each leaf node corresponds to a predicted outcome.
+
+Decision trees are used in machine learning for a variety of applications, including but not limited to fraud detection, customer segmentation, and medical diagnosis. They are popular because they are easy to interpret and explain, and can be visualized for easier understanding. They are also able to handle both categorical and numerical data, and can handle missing values.
+
+## For Running the Code
 ``python -m pytest -s``
 
 To run a single test, you can specify it with `-k`, e.g., `python -m pytest -s
