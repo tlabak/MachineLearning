@@ -1,0 +1,12 @@
+============================= test session starts ==============================
+platform linux -- Python 3.9.16, pytest-7.2.1, pluggy-1.0.0
+rootdir: /workspace
+collected 16 items
+tests/test_a_environment.py ..                                           [ 12%]
+tests/test_a_setup.py .                                                  [ 18%]
+tests/test_distances.py ...                                              [ 37%]
+tests/test_generate_regression_data.py ..                                [ 50%]
+tests/test_knn.py .....                                                  [ 81%]
+tests/test_metrics.py .                                                  [ 87%]
+tests/test_polynomial_regression.py ..                                   [100%]
+============================== 16 passed in 3.55s ==============================

@@ -1,0 +1,67 @@
+============================= test session starts ==============================
+platform linux -- Python 3.9.16, pytest-7.2.1, pluggy-1.0.0
+rootdir: /workspace
+collected 16 items
+tests/test_a_environment.py FF                                           [ 12%]
+tests/test_a_setup.py .                                                  [ 18%]
+tests/test_distances.py ...                                              [ 37%]
+tests/test_generate_regression_data.py ..                                [ 50%]
+tests/test_knn.py FFFFF                                                  [ 81%]
+tests/test_metrics.py .                                                  [ 87%]
+tests/test_polynomial_regression.py ..                                   [100%]
+=================================== FAILURES ===================================
+_____________________________ test_np_suggestions ______________________________
+>                           assert "src.random" in line, src_random_msg.format(
+                                i, fn)
+E                           AssertionError: Please use `src.random` instead of `np.random` in line 58 of /workspace/src/regression.py.
+E                           assert 'src.random' in '            X += np.random.normal(0, 1e-10, X.shape)\n'
+tests/test_a_environment.py:21: AssertionError
+_________________________________ test_imports _________________________________
+>                               assert line.strip() == docstring, msg
+E                               AssertionError: Don't use polynomial in line 49 of /workspace/src/regression.py
+E                               assert '# Generate t...mial features' == 'Do not use t...attr, globals'
+E                                 - Do not use these numpy or internal functions: polynomial, polyfit, polyval, getattr, globals
+E                                 + # Generate the feature matrix with polynomial features
+tests/test_a_environment.py:81: AssertionError
+_____________________________ test_knn_aggregators _____________________________
+>       assert np.all(mode_aggregator.predict(X) == 1), msg
+tests/test_knn.py:47:
+>   ???
+E   ValueError: object too deep for desired array
+<__array_function__ internals>:200: ValueError
+_______________________________ test_knn_k_is_1 ________________________________
+>                   accuracy = run(datasets[key], fraction,
+                                   n_neighbors=1,
+                                   distance_measure=distance_measure,
+                                   aggregator="mode")
+tests/test_knn.py:67:
+>   ???
+E   ValueError: object too deep for desired array
+<__array_function__ internals>:200: ValueError
+______________________________ test_knn_k_is_big _______________________________
+>           preds = model.predict(features)
+tests/test_knn.py:87:
+>   ???
+E   ValueError: object too deep for desired array
+<__array_function__ internals>:200: ValueError
+_____________________________ test_knn_comparisons _____________________________
+>           acc_a = run(data_path, fraction, **kwargs_a)
+tests/test_knn.py:109:
+>   ???
+E   ValueError: object too deep for desired array
+<__array_function__ internals>:200: ValueError
+_____________________________ test_knn_regression ______________________________
+>                   mse = mean_squared_error(y, model.predict(x))
+tests/test_knn.py:134:
+>           n_features = self.aggregator(self.targets[:self.n_neighbors]).shape[1]
+E           IndexError: tuple index out of range
+src/k_nearest_neighbor.py:109: IndexError
+=========================== short test summary info ============================
+FAILED tests/test_a_environment.py::test_np_suggestions - AssertionError: Ple...
+FAILED tests/test_a_environment.py::test_imports - AssertionError: Don't use ...
+FAILED tests/test_knn.py::test_knn_aggregators - ValueError: object too deep ...
+FAILED tests/test_knn.py::test_knn_k_is_1 - ValueError: object too deep for d...
+FAILED tests/test_knn.py::test_knn_k_is_big - ValueError: object too deep for...
+FAILED tests/test_knn.py::test_knn_comparisons - ValueError: object too deep ...
+FAILED tests/test_knn.py::test_knn_regression - IndexError: tuple index out o...
+========================= 7 failed, 9 passed in 3.45s ==========================

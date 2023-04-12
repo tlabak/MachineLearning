@@ -1,0 +1,58 @@
+============================= test session starts ==============================
+platform linux -- Python 3.9.16, pytest-7.2.1, pluggy-1.0.0
+rootdir: /workspace
+collected 16 items
+tests/test_a_environment.py ..                                           [ 12%]
+tests/test_a_setup.py .                                                  [ 18%]
+tests/test_distances.py ...                                              [ 37%]
+tests/test_generate_regression_data.py ..                                [ 50%]
+tests/test_knn.py FFFFF                                                  [ 81%]
+tests/test_metrics.py .                                                  [ 87%]
+tests/test_polynomial_regression.py ..                                   [100%]
+=================================== FAILURES ===================================
+_____________________________ test_knn_aggregators _____________________________
+>       assert np.all(mode_aggregator.predict(X) == 1), msg
+E       AssertionError: KNN mode aggregator should take mode of neighbors
+E       assert False
+E        +  where False = <function all at 0x7f2de5630550>(array([[0.],\n       [0.],\n       [0.],\n       [0.],\n       [0.]]) == 1)
+E        +    where <function all at 0x7f2de5630550> = np.all
+E        +    and   array([[0.],\n       [0.],\n       [0.],\n       [0.],\n       [0.]]) = <bound method KNearestNeighbor.predict of <src.k_nearest_neighbor.KNearestNeighbor object at 0x7f2d652a6430>>(array([[1.],\n       [1.],\n       [1.],\n       [1.],\n       [1.]]))
+E        +      where <bound method KNearestNeighbor.predict of <src.k_nearest_neighbor.KNearestNeighbor object at 0x7f2d652a6430>> = <src.k_nearest_neighbor.KNearestNeighbor object at 0x7f2d652a6430>.predict
+tests/test_knn.py:47: AssertionError
+_______________________________ test_knn_k_is_1 ________________________________
+>                   assert accuracy >= goal, message
+E                   AssertionError: On ivy-league.csv with fraction=1.0, distance=euc, expected 0.9 but got 0.500
+E                   assert 0.5 >= 0.9
+tests/test_knn.py:73: AssertionError
+______________________________ test_knn_k_is_big _______________________________
+>           assert np.all(preds == mode_target), "For large K, KNN just predicts majority class"
+E           AssertionError: For large K, KNN just predicts majority class
+E           assert False
+E            +  where False = <function all at 0x7f2de5630550>(array([[0.],\n       [0.],\n       [0.],\n       [0.],\n       [0.],\n       [0.],\n       [0.],\n       [0.],\n       [0.],\n ...,\n       [0.],\n       [0.],\n       [0.],\n       [0.],\n       [0.],\n       [0.],\n       [0.],\n       [0.],\n       [0.]]) == 1)
+E            +    where <function all at 0x7f2de5630550> = np.all
+tests/test_knn.py:89: AssertionError
+_____________________________ test_knn_comparisons _____________________________
+>           assert acc_a > acc_b, message
+E           AssertionError: {'distance_measure': 'cosine', 'n_neighbors': 7, 'aggregator': 'mode'} should beat {'distance_measure': 'euclidean', 'n_neighbors': 7, 'aggregator': 'mode'} in comparion #1 on movielens.csv.gz, but 0.483 <= 0.483
+E           assert 0.48333333333333334 > 0.48333333333333334
+tests/test_knn.py:114: AssertionError
+_____________________________ test_knn_regression ______________________________
+>                       assert np.isclose(mse, 0), msg
+E                       AssertionError: degree=1, amount=10, k=1: should be perfect
+E                       assert False
+E                        +  where False = <function isclose at 0x7f2de55c1670>(35.66610226527701, 0)
+E                        +    where <function isclose at 0x7f2de55c1670> = np.isclose
+tests/test_knn.py:140: AssertionError
+=============================== warnings summary ===============================
+tests/test_knn.py::test_knn_k_is_big
+tests/test_knn.py::test_knn_k_is_big
+  /workspace/src/distances.py:21: RuntimeWarning: invalid value encountered in sqrt
+    D = np.sqrt(X_norm + Y_norm.T - 2 * dot)
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_knn.py::test_knn_aggregators - AssertionError: KNN mode agg...
+FAILED tests/test_knn.py::test_knn_k_is_1 - AssertionError: On ivy-league.csv...
+FAILED tests/test_knn.py::test_knn_k_is_big - AssertionError: For large K, KN...
+FAILED tests/test_knn.py::test_knn_comparisons - AssertionError: {'distance_m...
+FAILED tests/test_knn.py::test_knn_regression - AssertionError: degree=1, amo...
+=================== 5 failed, 11 passed, 2 warnings in 3.83s ===================

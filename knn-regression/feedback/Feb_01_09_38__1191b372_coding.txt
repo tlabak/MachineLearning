@@ -1,0 +1,81 @@
+============================= test session starts ==============================
+platform linux -- Python 3.9.16, pytest-7.2.1, pluggy-1.0.0
+rootdir: /workspace
+collected 16 items
+tests/test_a_environment.py FF                                           [ 12%]
+tests/test_a_setup.py .                                                  [ 18%]
+tests/test_distances.py ...                                              [ 37%]
+tests/test_generate_regression_data.py ..                                [ 50%]
+tests/test_knn.py FFFFF                                                  [ 81%]
+tests/test_metrics.py .                                                  [ 87%]
+tests/test_polynomial_regression.py FF                                   [100%]
+=================================== FAILURES ===================================
+_____________________________ test_np_suggestions ______________________________
+>                           assert "src.random" in line, src_random_msg.format(
+                                i, fn)
+E                           AssertionError: Please use `src.random` instead of `np.random` in line 23 of /workspace/src/generate_regression_data.py.
+E                           assert 'src.random' in '    #x = np.random.uniform(low=-1, high=1, size=(N, 1))\n'
+tests/test_a_environment.py:21: AssertionError
+_________________________________ test_imports _________________________________
+>                               assert line.strip() == docstring, msg
+E                               AssertionError: Don't use polyval in line 63 of /workspace/src/generate_regression_data.py
+E                               assert 'y0 = np.polyval(coefs, x)' == 'Do not use t...attr, globals'
+E                                 - Do not use these numpy or internal functions: polynomial, polyfit, polyval, getattr, globals
+E                                 + y0 = np.polyval(coefs, x)
+tests/test_a_environment.py:81: AssertionError
+_____________________________ test_knn_aggregators _____________________________
+>       mode_aggregator.fit(X, y)
+tests/test_knn.py:45:
+>       raise NotImplementedError
+E       NotImplementedError
+src/k_nearest_neighbor.py:59: NotImplementedError
+_______________________________ test_knn_k_is_1 ________________________________
+>                   accuracy = run(datasets[key], fraction,
+                                   n_neighbors=1,
+                                   distance_measure=distance_measure,
+                                   aggregator="mode")
+tests/test_knn.py:67:
+>       raise NotImplementedError
+E       NotImplementedError
+src/k_nearest_neighbor.py:59: NotImplementedError
+______________________________ test_knn_k_is_big _______________________________
+>           model.fit(features, targets)
+tests/test_knn.py:86:
+>       raise NotImplementedError
+E       NotImplementedError
+src/k_nearest_neighbor.py:59: NotImplementedError
+_____________________________ test_knn_comparisons _____________________________
+>           acc_a = run(data_path, fraction, **kwargs_a)
+tests/test_knn.py:109:
+>       raise NotImplementedError
+E       NotImplementedError
+src/k_nearest_neighbor.py:59: NotImplementedError
+_____________________________ test_knn_regression ______________________________
+>                   model.fit(x, y)
+tests/test_knn.py:133:
+>       raise NotImplementedError
+E       NotImplementedError
+src/k_nearest_neighbor.py:59: NotImplementedError
+______________________ test_polynomial_regression_basics _______________________
+>           model = PolynomialRegression(degree)
+tests/test_polynomial_regression.py:11:
+>       raise NotImplementedError
+E       NotImplementedError
+src/regression.py:26: NotImplementedError
+_______________________ test_polynomial_regression_full ________________________
+>           p = PolynomialRegression(degree)
+tests/test_polynomial_regression.py:38:
+>       raise NotImplementedError
+E       NotImplementedError
+src/regression.py:26: NotImplementedError
+=========================== short test summary info ============================
+FAILED tests/test_a_environment.py::test_np_suggestions - AssertionError: Ple...
+FAILED tests/test_a_environment.py::test_imports - AssertionError: Don't use ...
+FAILED tests/test_knn.py::test_knn_aggregators - NotImplementedError
+FAILED tests/test_knn.py::test_knn_k_is_1 - NotImplementedError
+FAILED tests/test_knn.py::test_knn_k_is_big - NotImplementedError
+FAILED tests/test_knn.py::test_knn_comparisons - NotImplementedError
+FAILED tests/test_knn.py::test_knn_regression - NotImplementedError
+FAILED tests/test_polynomial_regression.py::test_polynomial_regression_basics
+FAILED tests/test_polynomial_regression.py::test_polynomial_regression_full
+========================= 9 failed, 7 passed in 1.45s ==========================

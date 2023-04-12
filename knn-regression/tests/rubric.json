@@ -1,0 +1,70 @@
+{
+    "test_imports": {
+        "weight": "required",
+        "depends": []
+    },
+    "test_setup": {
+      "weight": "required",
+      "depends": []
+    },
+
+    "test_mean_squared_error": {
+      "weight": 0.5,
+      "depends": []
+    },
+    "test_euclidean_distances": {
+      "weight": 0.5,
+      "depends": []
+    },
+    "test_manhattan_distances": {
+      "weight": 0.5,
+      "depends": []
+    },
+    "test_cosine_distances": {
+      "weight": 0.5,
+      "depends": []
+    },
+
+    "test_generate_regression_data": {
+      "weight": 1,
+      "depends": []
+    },
+    "test_polynomial_regression_basics": {
+      "weight": 1,
+      "depends": ["test_generate_regression_data",
+                  "test_mean_squared_error"]
+    },
+    "test_polynomial_regression_full": {
+      "weight": 3,
+      "depends": ["test_polynomial_regression_basics",
+                  "test_generate_regression_data",
+                  "test_mean_squared_error"]
+    },
+
+    "test_knn_k_is_1": {
+      "weight": 1,
+      "depends": ["test_euclidean_distances",
+                  "test_manhattan_distances",
+                  "test_cosine_distances"]
+    },
+    "test_knn_k_is_big": {
+      "weight": 1,
+      "depends": ["test_euclidean_distances",
+                  "test_manhattan_distances",
+                  "test_cosine_distances"]
+    },
+    "test_knn_comparisons": {
+      "weight": 1,
+      "depends": ["test_euclidean_distances",
+                  "test_manhattan_distances",
+                  "test_cosine_distances"]
+    },
+    "test_knn_regression": {
+      "weight": 2,
+      "depends": ["test_euclidean_distances",
+                  "test_manhattan_distances",
+                  "test_cosine_distances",
+                  "test_generate_regression_data",
+                  "test_mean_squared_error"]
+    }
+}

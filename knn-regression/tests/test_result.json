@@ -1,0 +1,18 @@
+{
+    "test_np_suggestions": true,
+    "test_imports": true,
+    "test_setup": true,
+    "test_euclidean_distances": true,
+    "test_manhattan_distances": true,
+    "test_cosine_distances": true,
+    "test_generate_regression_data": true,
+    "test_generate_random_numbers": true,
+    "test_knn_aggregators": true,
+    "test_knn_k_is_1": true,
+    "test_knn_k_is_big": true,
+    "test_knn_comparisons": true,
+    "test_knn_regression": true,
+    "test_mean_squared_error": true,
+    "test_polynomial_regression_basics": true,
+    "test_polynomial_regression_full": true
+}

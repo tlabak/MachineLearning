@@ -1,0 +1,17 @@
+{
+    "score": 100,
+    "tests_passed": 13,
+    "notes": {
+        "test_euclidean_distances": "PASS:",
+        "test_manhattan_distances": "PASS:",
+        "test_cosine_distances": "PASS:",
+        "test_generate_regression_data": "PASS:",
+        "test_knn_k_is_1": "PASS:",
+        "test_knn_k_is_big": "PASS:",
+        "test_knn_comparisons": "PASS:",
+        "test_knn_regression": "PASS:",
+        "test_mean_squared_error": "PASS:",
+        "test_polynomial_regression_basics": "PASS:",
+        "test_polynomial_regression_full": "PASS:"
+    }
+}
