@@ -1,0 +1,21 @@
+{
+    "score": 85,
+    "tests_passed": 15,
+    "notes": {
+        "test_perceptron": "PASS:",
+        "test_polynomial_perceptron": "PASS:",
+        "test_model_forward": "PASS:",
+        "test_model_backward": "PASS:",
+        "test_model_fit_xor": "PASS:",
+        "test_model_fit_circles": "PASS:",
+        "test_custom_transform": "FAIL:",
+        "test_squared_loss_basics": "PASS:",
+        "test_squared_loss_fit": "PASS:",
+        "test_l1_basics": "PASS:",
+        "test_l2_basics": "PASS:",
+        "test_regularization_fit_circles": "FAIL:",
+        "test_relu_basics": "PASS:",
+        "test_relu_fit_xor": "PASS:",
+        "test_relu_fit_circles": "PASS:"
+    }
+}

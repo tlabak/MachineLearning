@@ -1,0 +1,30 @@
+============================= test session starts ==============================
+platform linux -- Python 3.9.16, pytest-7.2.1, pluggy-1.0.0
+rootdir: /workspace
+collected 18 items
+tests/test_a_environment.py ..                                           [ 11%]
+tests/test_a_setup.py .                                                  [ 16%]
+tests/test_custom_transform.py F                                         [ 22%]
+tests/test_loss.py ..                                                    [ 33%]
+tests/test_model.py ....                                                 [ 55%]
+tests/test_perceptron.py ..                                              [ 66%]
+tests/test_regularization.py ..F                                         [ 83%]
+tests/test_relu.py ...                                                   [100%]
+=================================== FAILURES ===================================
+____________________________ test_custom_transform _____________________________
+>       assert acc >= 0.9, msg
+E       AssertionError: Custom transform at 81.2% accuracy, want 90%.
+E       assert 0.8125 >= 0.9
+tests/test_custom_transform.py:21: AssertionError
+_______________________ test_regularization_fit_circles ________________________
+>       assert np.mean(np.abs(weights[(0.1, "l1")]) < 0.01) > 0.7
+E       AssertionError: assert 0.40625 > 0.7
+E        +  where 0.40625 = <function mean at 0x7fbb32f32670>(array([[1.05244073e+00, 1.45377240e-01, 2.21495288e-01, 6.07418715e-01,\n        1.79808832e+00, 4.61217237e-01, 6.1087...10341578e-03, 2.06519779e-01, 3.80516520e-01,\n        3.78951158e-04, 9.73562701e-03, 5.90921309e-03, 9.17819538e-03]]) < 0.01)
+E        +    where <function mean at 0x7fbb32f32670> = np.mean
+E        +    and   array([[1.05244073e+00, 1.45377240e-01, 2.21495288e-01, 6.07418715e-01,\n        1.79808832e+00, 4.61217237e-01, 6.1087...10341578e-03, 2.06519779e-01, 3.80516520e-01,\n        3.78951158e-04, 9.73562701e-03, 5.90921309e-03, 9.17819538e-03]]) = <ufunc 'absolute'>(array([[ 1.05244073e+00, -1.45377240e-01,  2.21495288e-01,\n        -6.07418715e-01, -1.79808832e+00,  4.61217237e-01,\n...-2.06519779e-01,  3.80516520e-01,\n        -3.78951158e-04, -9.73562701e-03, -5.90921309e-03,\n        -9.17819538e-03]]))
+E        +      where <ufunc 'absolute'> = np.abs
+tests/test_regularization.py:91: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_custom_transform.py::test_custom_transform - AssertionError...
+FAILED tests/test_regularization.py::test_regularization_fit_circles - Assert...
+========================= 2 failed, 16 passed in 7.04s =========================

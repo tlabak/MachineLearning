@@ -1,0 +1,119 @@
+{
+    "test_setup": {
+        "weight": "required",
+        "depends": []
+    },
+    "test_imports": {
+        "weight": "required",
+        "depends": []
+    },
+
+    "test_perceptron": {
+        "weight": 3,
+        "depends": [
+            "test_setup",
+            "test_imports"
+        ]
+    },
+    "test_polynomial_perceptron": {
+        "weight": 1,
+        "depends": [
+            "test_imports",
+            "test_setup",
+            "test_perceptron"
+        ]
+    },
+
+    "test_model_forward": {
+        "weight": 1,
+        "depends": [
+            "test_imports"
+        ]
+    },
+    "test_model_backward": {
+        "weight": 1,
+        "depends": [
+            "test_imports"
+        ]
+    },
+    "test_model_fit_xor": {
+        "weight": 2,
+        "depends": [
+            "test_imports",
+            "test_model_forward",
+            "test_model_backward"
+        ]
+    },
+    "test_model_fit_circles": {
+        "weight": 2,
+        "depends": [
+            "test_imports",
+            "test_model_forward",
+            "test_model_backward"
+        ]
+    },
+
+    "test_squared_loss_basics": {
+        "weight": 1,
+        "depends": [
+            "test_imports"
+        ]
+    },
+    "test_squared_loss_fit": {
+        "weight": 1,
+        "depends": [
+            "test_imports",
+            "test_squared_loss_basics"
+        ]
+    },
+
+    "test_l1_basics": {
+        "weight": 1,
+        "depends": [
+            "test_imports"
+        ]
+    },
+    "test_l2_basics": {
+        "weight": 1,
+        "depends": [
+            "test_imports"
+        ]
+    },
+    "test_regularization_fit_circles": {
+        "weight": 2,
+        "depends": [
+            "test_imports",
+            "test_l1_basics",
+            "test_l2_basics"
+        ]
+    },
+
+    "test_relu_basics": {
+        "weight": 1,
+        "depends": [
+            "test_imports"
+        ]
+    },
+    "test_relu_fit_xor": {
+        "weight": 1,
+        "depends": [
+            "test_imports",
+            "test_relu_fit_xor"
+        ]
+    },
+    "test_relu_fit_circles": {
+        "weight": 1,
+        "depends": [
+            "test_imports",
+            "test_relu_fit_xor"
+        ]
+    },
+
+    "test_custom_transform": {
+        "weight": 1,
+        "depends": [
+            "test_imports",
+            "test_perceptron"
+        ]
+    }
+}

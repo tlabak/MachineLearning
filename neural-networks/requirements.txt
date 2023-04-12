@@ -1,0 +1,9 @@
+#for completing assignment
+numpy
+pandas
+matplotlib
+
+#for running test cases only:
+filetype
+pytest
+scikit-learn

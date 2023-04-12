@@ -1,0 +1,20 @@
+{
+    "test_setup": true,
+    "test_imports": true,
+    "test_perceptron": true,
+    "test_polynomial_perceptron": true,
+    "test_model_forward": true,
+    "test_model_backward": true,
+    "test_model_fit_xor": true,
+    "test_model_fit_circles": true,
+    "test_np_suggestions": true,
+    "test_custom_transform": false,
+    "test_squared_loss_basics": true,
+    "test_squared_loss_fit": true,
+    "test_l1_basics": true,
+    "test_l2_basics": true,
+    "test_regularization_fit_circles": false,
+    "test_relu_basics": true,
+    "test_relu_fit_xor": true,
+    "test_relu_fit_circles": true
+}
