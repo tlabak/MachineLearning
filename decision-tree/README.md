@@ -15,6 +15,13 @@ To run a single test, you can specify it with `-k`, e.g., `python -m pytest -s
 fact be printed; the default behavior (`python -m pytest`) will suppress
 everything but the pytest output.
 
+## Coding
+- Implemented a train test split and cross validation
+- Implemented some classification metrics
+- Implemented a simple model that just predicts the mode (most common class)
+- Computed information gain
+- Implemented a decision tree with the ID3 algorithm
+
 ## Material
 - [Let’s Write a Decision Tree Classifier from Scratch - Machine Learning Recipes #8](https://www.youtube.com/watch?v=LDRbO9a6XPU)
 
