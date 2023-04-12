@@ -1,0 +1,19 @@
+============================= test session starts ==============================
+platform linux -- Python 3.9.16, pytest-7.2.1, pluggy-1.0.0
+rootdir: /workspace
+collected 15 items
+tests/test_a_environment.py .                                            [  6%]
+tests/test_a_setup.py .                                                  [ 13%]
+tests/test_frq1.py .                                                     [ 20%]
+tests/test_naive_bayes.py ........                                       [ 73%]
+tests/test_scipy.py ..                                                   [ 86%]
+tests/test_utils.py ..                                                   [100%]
+=============================== warnings summary ===============================
+src/naive_bayes.py:141
+  /workspace/src/naive_bayes.py:141: DeprecationWarning: invalid escape sequence \s
+    """
+src/naive_bayes_em.py:140
+  /workspace/src/naive_bayes_em.py:140: DeprecationWarning: invalid escape sequence \s
+    """
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 15 passed, 2 warnings in 4.09s ========================
